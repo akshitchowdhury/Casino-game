@@ -83,9 +83,9 @@ export default function ImageReels() {
                             <AnimatePresence mode='wait'>
                                 <motion.div 
                                     key={number}
-                                    initial={{ opacity: 0, y: -20 }}
+                                    initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 20 }}
+                                    exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.2 }}
                                 >
                                     <div className='mx-6'>

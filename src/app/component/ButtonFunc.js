@@ -44,6 +44,7 @@ reel3, setReel3}) => {
             console.log("Lucky Number: "+ randomLuckyNumber)
             setPoints(points - 10);
             setReel3(randomReelNumber)
+            console.log("Rndom reel: "+randomReelNumber)
         }
     }
     return (

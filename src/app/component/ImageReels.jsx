@@ -44,7 +44,7 @@ export default function ImageReels() {
                         <div className="flex flex-col md:flex-row items-center gap-4 p-4 border border-gray-700 rounded-md">
            
                         <div className="text-xl md:text-2xl text-center md:text-left">
-                    Let's get Lucky:
+                    Reel1:
                     <AnimatePresence mode='wait'>
                                 <motion.div 
                                     key={number}
@@ -62,7 +62,7 @@ export default function ImageReels() {
                 </div>
                         
                         <div className='mx-6 flex flex-col items-center'>
-                            <p>You Got This:</p>
+                            <p>Reel2:</p>
                             <AnimatePresence mode='wait'>
                                 <motion.div 
                                     key={number}

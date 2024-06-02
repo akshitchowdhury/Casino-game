@@ -29,24 +29,36 @@ reel3, setReel3}) => {
     }
 
     const handleRandomGeneration = () => {
-        const randomNumber = Math.floor(Math.random() * 4) + 1;
-        const randomLuckyNumber =Math.floor(Math.random() * 5) + 1;
-        const randomReelNumber =Math.floor(Math.random() * 6) + 1;
-
+        
+        const randomNumber = generateUniqueRandomNumber(4);
+        const randomLuckyNumber = generateUniqueRandomNumber(5);
+        const randomReelNumber = generateUniqueRandomNumber(6);
+    
         if (points === 0) {
             alert('Game Over');
             setNumber(points);   
             return;   
         } else {
             setNumber(randomNumber);
-            console.log("Random Number: "+ randomNumber)
+            console.log("Random Number: " + randomNumber)
             setLuckyNumber(randomLuckyNumber);
-            console.log("Lucky Number: "+ randomLuckyNumber)
+            console.log("Lucky Number: " + randomLuckyNumber)
             setPoints(points - 10);
             setReel3(randomReelNumber)
-            console.log("Rndom reel: "+randomReelNumber)
+            console.log("Random reel: " + randomReelNumber)
         }
     }
+    
+    const generateUniqueRandomNumber = (max) => {
+        const usedNumbers = []
+        let randomNumber;
+        do {
+            randomNumber = Math.floor(Math.random() * max) + 1;
+        } while (usedNumbers.includes(randomNumber));
+        usedNumbers.push(randomNumber);
+        return randomNumber;
+    }
+    
     return (
     <div className='flex flex-row -my-12'>
     <p>Coins Remaining: {points}</p>

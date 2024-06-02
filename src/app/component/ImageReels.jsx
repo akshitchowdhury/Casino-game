@@ -47,7 +47,7 @@ export default function ImageReels() {
                     Reel1:
                     <AnimatePresence mode='wait'>
                                 <motion.div 
-                                    key={number}
+                                    key={luckyNumber}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -20 }}
@@ -82,7 +82,7 @@ export default function ImageReels() {
                             <p>Reel 3:</p>
                             <AnimatePresence mode='wait'>
                                 <motion.div 
-                                    key={number}
+                                    key={reel3}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -20 }}

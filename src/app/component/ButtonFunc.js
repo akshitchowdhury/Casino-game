@@ -42,25 +42,37 @@ const ButtonFunc = ({
     }
   };
 
-  const handleRandomGeneration = () => {
-    const randomNumber = generateUniqueRandomNumber(4);
-    const randomLuckyNumber = generateUniqueRandomNumber(5);
-    const randomReelNumber = generateUniqueRandomNumber(6);
+ const handleRandomGeneration = () => {
+  const randomNumber = generateUniqueRandomNumber(4);
+  const randomLuckyNumber = generateUniqueRandomNumber(5);
+  const randomReelNumber = generateUniqueRandomNumber(6);
 
-    if (points === 0) {
-      alert("Game Over");
-      setNumber(points);
-      return;
-    } else {
-      setNumber(randomNumber);
-      console.log("Random Number: " + randomNumber);
+  if (points === 0) {
+    alert("Game Over");
+    setNumber(points);
+    return;
+  } else {
+    // Delayed execution of setNumber
+    setTimeout(() => {
       setLuckyNumber(randomLuckyNumber);
-      console.log("Lucky Number: " + randomLuckyNumber);
+      console.log("Random Number: " + randomLuckyNumber);
+    }, 100);
+
+    // Delayed execution of setLuckyNumber
+    setTimeout(() => {
+        setNumber(randomNumber);
+      console.log("Lucky Number: " + randomNumber);
+    }, 300);
+
+    // Delayed execution of setReel3
+    setTimeout(() => {
       setPoints(points - 10);
       setReel3(randomReelNumber);
       console.log("Random reel: " + randomReelNumber);
-    }
-  };
+    }, 500);
+  }
+};
+
 
   const generateUniqueRandomNumber = (max) => {
     const usedNumbers = [];

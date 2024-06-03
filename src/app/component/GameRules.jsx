@@ -13,6 +13,8 @@ const style = {
     p: 4,
     maxHeight: '90%',
     overflowY: 'auto', 
+    border: "1pt solid white",
+    
 };
 
 const GameRules = ({ title,objective,image, onClose }) => {

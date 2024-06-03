@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ButtonFunc from './ButtonFunc';
 import Image from 'next/image';
 import './ImageReels.css'
+import GameRules from './GameRules';
 export default function ImageReels() {
     const rewards = 100;
     const [number, setNumber] = useState(0);  
@@ -12,15 +13,25 @@ export default function ImageReels() {
     const [points, setPoints] = useState(50); 
     const [balance, setBalance] = useState(rewards);
     const [loading, setLoading] = useState(true);
+    const [showRules, setShowRules] = useState(false);
 
     useEffect(() => {
         setNumber(0);
         setLuckyNumber(-1);
         setReel3(-2);
         setLoading(false);
+        setShowRules(false)
     }, []);
 
-   
+     // Function to handle opening modal
+     const handleOpenRules = () => {
+        setShowRules(true);
+    };
+
+    // Function to handle closing modal
+    const handleCloseRules = () => {
+        setShowRules(false);
+    };
 
     if (loading) {
         return (
@@ -33,6 +44,23 @@ export default function ImageReels() {
     return (
         <div className=" flex flex-col items-center justify-center min-h-screen bg-zinc-900 bg-opacity-900 text-white">
             <div className="text-2xl md:text-4xl absolute top-6 left-6">Balance: {balance}</div>
+            <button onClick={handleOpenRules}>Open Game Rules</button>
+            {
+                showRules ? (
+                    <GameRules 
+                title="Your Game Title" 
+                objective="Objective of the Game" 
+                image={`/assets/${reel3}.jpg`}
+                open={showRules} 
+                onClose={handleCloseRules} 
+            />
+                ) : (
+                    <>
+
+                    </>
+                )
+            }
+            
                
                 <div className="my-16 text-xl md:text-2xl text-center md:text-left">
                     {points === 0 ? (

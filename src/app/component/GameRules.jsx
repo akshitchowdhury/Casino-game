@@ -22,8 +22,10 @@ const GameRules = ({ title,objective,image, onClose }) => {
                 <Typography variant="h6" component="h2">
                     {title} - Game Rules
                 </Typography>
+                <div className='flex flex-row'>
                 <img className='mx-28' src={image} alt={title} 
-                style={{ width: '30%', height: '30%', marginTop: '16px' }} />
+                style={{ width: '20%', height: '10%', marginTop: '16px' }} />
+                <div className='flex flex-col'>
                 <Typography sx={{ mt: 2 }}>
                     Welcome to the {title} Game! Here are the rules:
                 </Typography>
@@ -37,17 +39,19 @@ const GameRules = ({ title,objective,image, onClose }) => {
                     3. Once 3 Reels are in a match, you win the game and earn a bonus 100 coins as reward.
                 </Typography>
                 <Typography sx={{ mt: 2 }}>
-                    4. Per spin uses 10 stake points which.
+                    4. Per spin uses 10 stake points which can be replenished from the <b>limited Balance Stock</b>.
                 </Typography>
                 <Typography sx={{ mt: 2 }}>
                     5. Stake points can be changed according to your needs by withdrawing from your Balance coins.
                 </Typography>
                 <Typography sx={{ mt: 2 }}>
-                    6. Have fun and enjoy the game...and most of all play responsibly!
+                    6. Have fun and enjoy the game...and most of all play <b> responsibly</b>!
                 </Typography>
                 <Button onClick={onClose} variant="contained" color="primary" sx={{ mt: 2 }}>
                     Close
                 </Button>
+                </div>
+                </div>
             </Box>
         </Modal>
     );

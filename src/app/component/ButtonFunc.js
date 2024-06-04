@@ -22,7 +22,7 @@ const ButtonFunc = ({
   setReel3,
 }) => {
   function lowBalAlert() {
-    return alert("Low balance");
+    return alert("Minimum 10 coins required to Play");
   }
 
   const handleBalanceMinus = () => {
